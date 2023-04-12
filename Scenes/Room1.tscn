@@ -1,0 +1,990 @@
+[gd_scene load_steps=101 format=2]
+
+[ext_resource path="res://Assets/Music/Room1.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Sprites/Backgrounds/Room1Background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Down.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sprites/Characters/Kylo.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Characters/KyloJump1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Characters/KyloJump2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Characters/KyloRight.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Characters/KyloRight2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Characters/KyloRight3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Characters/KyloSideAttack1.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/Blobset1.gd" type="Script" id=12]
+[ext_resource path="res://Assets/Sprites/Characters/Enemies/blobset1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/Characters/KyloSideAttack2.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/Characters/KyloSideAttack3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/Characters/KyloDead.png" type="Texture" id=16]
+[ext_resource path="res://Assets/UI/heart.png" type="Texture" id=17]
+[ext_resource path="res://Assets/UI/downarrow.png" type="Texture" id=18]
+[ext_resource path="res://Assets/UI/birthdaycard.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/PickupBirthdayCard.gd" type="Script" id=20]
+[ext_resource path="res://Scripts/PickupPeaSoupRecipe.gd" type="Script" id=21]
+[ext_resource path="res://Assets/UI/peasoup.png" type="Texture" id=22]
+[ext_resource path="res://Scripts/PickupCatCollar.gd" type="Script" id=23]
+[ext_resource path="res://Assets/UI/catcollar.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sprites/Characters/KyloIdle2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Sprites/Characters/KyloIdle3.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Sprites/Characters/KyloDead4.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Sprites/Characters/KyloDead3.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Sprites/Characters/KyloDead2.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Sprites/Characters/Enemies/blobset2.png" type="Texture" id=30]
+[ext_resource path="res://Scripts/DoorToRoom2.gd" type="Script" id=31]
+[ext_resource path="res://Assets/Sprites/Backgrounds/isitworking.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Sprites/Characters/Enemies/blobset3.png" type="Texture" id=33]
+[ext_resource path="res://Scripts/PlatformEnemy1.gd" type="Script" id=34]
+[ext_resource path="res://Assets/Sprites/Characters/Enemies/Bomb.tres" type="SpriteFrames" id=35]
+[ext_resource path="res://Scripts/BombEnemy2.gd" type="Script" id=36]
+[ext_resource path="res://Scenes/BombEnemy4.gd" type="Script" id=37]
+[ext_resource path="res://Scripts/PlatformEnemyBomb1.gd" type="Script" id=38]
+[ext_resource path="res://Scripts/BombEnemy3.gd" type="Script" id=39]
+[ext_resource path="res://Scripts/PlatformEnemy4.gd" type="Script" id=40]
+[ext_resource path="res://Scripts/PlatformEnemy5.gd" type="Script" id=41]
+[ext_resource path="res://Scripts/BombEnemy5.gd" type="Script" id=42]
+[ext_resource path="res://Assets/Music/SoundEffects/hit.mp3" type="AudioStream" id=43]
+[ext_resource path="res://Assets/Music/SoundEffects/itemGrabbed.wav" type="AudioStream" id=44]
+[ext_resource path="res://Scripts/PlatformEnemy2.gd" type="Script" id=45]
+[ext_resource path="res://Scripts/PlatformEnemy3.gd" type="Script" id=46]
+[ext_resource path="res://Scripts/BombEnemy6.gd" type="Script" id=47]
+[ext_resource path="res://Scripts/BombEnemy8.gd" type="Script" id=48]
+[ext_resource path="res://Scripts/BombEnemy7.gd" type="Script" id=49]
+[ext_resource path="res://Scripts/BombEnemy9.gd" type="Script" id=50]
+[ext_resource path="res://Scripts/PlatformEnemy6.gd" type="Script" id=51]
+[ext_resource path="res://Scenes/PlatformEnemy7.gd" type="Script" id=52]
+[ext_resource path="res://Scripts/PlatformEnemy9.gd" type="Script" id=53]
+[ext_resource path="res://Scripts/PlatformEnemy8.gd" type="Script" id=54]
+[ext_resource path="res://Scripts/PlatformEnemy10.gd" type="Script" id=55]
+[ext_resource path="res://Scripts/PlatformEnemy11.gd" type="Script" id=56]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.5, 4.25 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 25, 4.5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 24.75, 4.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 11.5 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "AttackSide",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "AttackIdle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 72.25, 597 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 26.5, 616 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 26.5, 371.5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 57.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 167.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 57, 10 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 166.5, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 57, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 26, 52.5 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 93, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 451.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 160.75, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 7.5 )
+
+[sub_resource type="RectangleShape2D" id=18]
+
+[sub_resource type="RectangleShape2D" id=19]
+
+[sub_resource type="RectangleShape2D" id=17]
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 10.5, 12.5 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=25]
+
+[sub_resource type="SpriteFrames" id=26]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 8.5, 8 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 8.5, 9 )
+
+[sub_resource type="RectangleShape2D" id=30]
+
+[sub_resource type="RectangleShape2D" id=31]
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 8, 7.4375 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 8, 7.5625 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 8, 8.75 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 8, 9 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 8.25, 7.75 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 8, 8.125 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 8, 7.5 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 8, 7.5 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 8, 8.75 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 8, 8.5 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 8, 8.75 )
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 8, 8.5 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 161, 110 )
+
+[node name="Room1Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Room1" type="Sprite" parent="."]
+position = Vector2( 341, -378 )
+scale = Vector2( 1.00313, 0.982143 )
+texture = ExtResource( 2 )
+
+[node name="Platform1" type="StaticBody2D" parent="."]
+
+[node name="Platform1" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 264.5, 52.75 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 185, 17.5 )
+shape = SubResource( 9 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 174, -64 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 254.5, -34 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 86, -95 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 21.75, -59.5 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( -83, -91 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( -11, -140 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( -84, -185 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 11, -230 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 120, -239 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( -82, -410 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 4, -431 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 97, -453 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 265, -509 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 86, -621 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 8, -650 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( -76, -676 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( -14, -704 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 79, -726 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 160, -763 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 254, -802 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 257, -324 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 606, -800 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 683, -756 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="Platform1"]
+visible = false
+position = Vector2( 755, -721 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 755, -667 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 612, -390 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 564, -314 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 503, -274 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 436, -170 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 580, -170 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 709, -228 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 675, -128 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 590, 29 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 407, 26 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="Platform1"]
+position = Vector2( 756, -721 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="Player" type="KinematicBody2D" parent="." groups=["Player"]]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+light_mask = 65
+current = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( -80, 77.5 )
+shape = SubResource( 2 )
+
+[node name="PlayerAnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( -81, 77 )
+frames = SubResource( 3 )
+animation = "Idle"
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -181, -486 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 817.5, -509 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 316.5, -281.5 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 231.5, -270 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 58.5, -356 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 231, -452 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 58.5, -550.5 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 232, -616.5 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 734, -450 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 505, 37.5 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 675, 39 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 510, -592 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 433, -389 )
+shape = SubResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 342.5, 100 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 503.25, -526 )
+shape = SubResource( 22 )
+
+[node name="Blobset1" type="KinematicBody2D" parent="."]
+position = Vector2( 9, 42 )
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Blobset1"]
+position = Vector2( -22, 28.5 )
+shape = SubResource( 5 )
+
+[node name="Blobset1AnimatedSprite" type="AnimatedSprite" parent="Blobset1"]
+position = Vector2( -22, 27 )
+frames = ExtResource( 35 )
+frame = 3
+playing = true
+
+[node name="PickupPeaSoupRecipe" type="Area2D" parent="."]
+position = Vector2( 253, -818 )
+script = ExtResource( 21 )
+
+[node name="Arrow" type="Sprite" parent="PickupPeaSoupRecipe"]
+visible = false
+position = Vector2( 0, -17 )
+texture = ExtResource( 18 )
+
+[node name="PeaSoupRecipe" type="Sprite" parent="PickupPeaSoupRecipe"]
+position = Vector2( 0, 3 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupPeaSoupRecipe"]
+position = Vector2( 0, 1 )
+shape = SubResource( 18 )
+
+[node name="PickupCatCollar" type="Area2D" parent="."]
+position = Vector2( -112, -79 )
+script = ExtResource( 23 )
+
+[node name="Arrow" type="Sprite" parent="PickupCatCollar"]
+visible = false
+position = Vector2( 717, -760 )
+texture = ExtResource( 18 )
+
+[node name="CatCollar" type="Sprite" parent="PickupCatCollar"]
+position = Vector2( 717.5, -738.5 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupCatCollar"]
+position = Vector2( 717.5, -741.5 )
+shape = SubResource( 19 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Heart" type="Sprite" parent="UI"]
+position = Vector2( 18, 14 )
+texture = ExtResource( 17 )
+
+[node name="Dying" type="ColorRect" parent="UI"]
+visible = false
+margin_left = -21.0
+margin_top = -21.0
+margin_right = 352.0
+margin_bottom = 238.0
+color = Color( 1, 0.105882, 0.105882, 0.560784 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BdayCard" type="Sprite" parent="UI"]
+visible = false
+position = Vector2( 17, 30 )
+texture = ExtResource( 19 )
+
+[node name="PeaSoupRecipe" type="Sprite" parent="UI"]
+visible = false
+position = Vector2( 35, 30 )
+texture = ExtResource( 22 )
+
+[node name="CatCollar" type="Sprite" parent="UI"]
+visible = false
+position = Vector2( 49, 31 )
+texture = ExtResource( 24 )
+
+[node name="PickupBirthdayCard" type="Area2D" parent="."]
+script = ExtResource( 20 )
+
+[node name="Arrow" type="Sprite" parent="PickupBirthdayCard"]
+visible = false
+position = Vector2( -84, -132 )
+scale = Vector2( 1, 0.966667 )
+texture = ExtResource( 18 )
+
+[node name="BdayCard" type="Sprite" parent="PickupBirthdayCard"]
+position = Vector2( -84, -104 )
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupBirthdayCard"]
+position = Vector2( -84, -106 )
+shape = SubResource( 17 )
+
+[node name="DoorToRoom2" type="Area2D" parent="."]
+script = ExtResource( 31 )
+
+[node name="Arrow" type="Sprite" parent="DoorToRoom2"]
+position = Vector2( 749, 53 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToRoom2"]
+position = Vector2( 748.5, 77.5 )
+shape = SubResource( 23 )
+
+[node name="Background" type="AnimatedSprite" parent="."]
+position = Vector2( 372, -399 )
+z_index = -1
+frames = SubResource( 24 )
+
+[node name="Background2" type="AnimatedSprite" parent="Background"]
+position = Vector2( 999, 0 )
+z_index = -1
+frames = SubResource( 24 )
+
+[node name="Background" type="AnimatedSprite" parent="Background"]
+position = Vector2( -1000, 16 )
+z_index = -1
+frames = SubResource( 24 )
+
+[node name="Background4" type="AnimatedSprite" parent="Background"]
+position = Vector2( 1450, -534 )
+z_index = -1
+frames = SubResource( 24 )
+offset = Vector2( -459, -461 )
+
+[node name="Background3" type="AnimatedSprite" parent="Background"]
+position = Vector2( 464, -520 )
+z_index = -1
+frames = SubResource( 24 )
+offset = Vector2( -459, -461 )
+
+[node name="Background5" type="AnimatedSprite" parent="Background"]
+position = Vector2( -534, -521 )
+z_index = -1
+frames = SubResource( 24 )
+offset = Vector2( -459, -461 )
+
+[node name="Background6" type="AnimatedSprite" parent="Background"]
+position = Vector2( 1562, 1443 )
+z_index = -1
+frames = SubResource( 24 )
+offset = Vector2( -459, -461 )
+
+[node name="Background7" type="AnimatedSprite" parent="Background"]
+position = Vector2( 585, 1454 )
+z_index = -1
+frames = SubResource( 24 )
+offset = Vector2( -459, -461 )
+
+[node name="Background8" type="AnimatedSprite" parent="Background"]
+position = Vector2( -422, 1456 )
+z_index = -1
+frames = SubResource( 24 )
+offset = Vector2( -459, -461 )
+
+[node name="PlatformEnemy1" type="Area2D" parent="."]
+script = ExtResource( 34 )
+enemy_name = "Blobset2AnimatedSprite"
+distance_travel = 25
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlatformEnemy1"]
+position = Vector2( 181, 6 )
+shape = SubResource( 5 )
+
+[node name="Blobset2AnimatedSprite" type="AnimatedSprite" parent="PlatformEnemy1"]
+position = Vector2( 181, 4 )
+frames = ExtResource( 35 )
+frame = 1
+playing = true
+
+[node name="BombEnemy1" type="Area2D" parent="."]
+script = ExtResource( 38 )
+enemy_name = "Bomb1AnimatedSprite"
+distance_travel = 40
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BombEnemy1"]
+position = Vector2( 242, -288 )
+shape = SubResource( 5 )
+
+[node name="Bomb1AnimatedSprite" type="AnimatedSprite" parent="BombEnemy1"]
+position = Vector2( 242, -289 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+frame = 3
+playing = true
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 43 )
+
+[node name="ItemGrabbed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 44 )
+
+[node name="PlatformEnemy2" type="Area2D" parent="."]
+script = ExtResource( 45 )
+enemy_name = "Blob3"
+distance_travel = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy2"]
+position = Vector2( 84, -109 )
+shape = SubResource( 25 )
+
+[node name="Blob3" type="AnimatedSprite" parent="PlatformEnemy2"]
+position = Vector2( 84, -109 )
+frames = SubResource( 26 )
+frame = 3
+playing = true
+
+[node name="PlatformEnemy3" type="Area2D" parent="."]
+script = ExtResource( 46 )
+enemy_name = "Blob4"
+distance_travel = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy3"]
+position = Vector2( 8.5, -242 )
+shape = SubResource( 27 )
+
+[node name="Blob4" type="AnimatedSprite" parent="PlatformEnemy3"]
+position = Vector2( 9, -243 )
+frames = SubResource( 28 )
+frame = 3
+playing = true
+
+[node name="BombEnemy2" type="Area2D" parent="."]
+script = ExtResource( 36 )
+enemy_name = "Bomb2"
+distance_travel = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombEnemy2"]
+position = Vector2( -45.5, -375 )
+shape = SubResource( 29 )
+
+[node name="Bomb2" type="AnimatedSprite" parent="BombEnemy2"]
+position = Vector2( -45, -375 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+
+[node name="BombEnemy3" type="Area2D" parent="."]
+script = ExtResource( 39 )
+enemy_name = "Bomb3"
+distance_travel = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombEnemy3"]
+position = Vector2( 108, -376 )
+shape = SubResource( 30 )
+
+[node name="Bomb3" type="AnimatedSprite" parent="BombEnemy3"]
+position = Vector2( 108, -375 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+
+[node name="BombEnemy4" type="Area2D" parent="."]
+script = ExtResource( 37 )
+enemy_name = "Bomb4"
+distance_travel = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombEnemy4"]
+position = Vector2( 29, -571 )
+shape = SubResource( 31 )
+
+[node name="Bomb4" type="AnimatedSprite" parent="BombEnemy4"]
+position = Vector2( 29, -570 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+
+[node name="PlatformEnemy4" type="Area2D" parent="."]
+script = ExtResource( 40 )
+enemy_name = "Platform4"
+distance_travel = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy4"]
+position = Vector2( -18, -715.563 )
+shape = SubResource( 32 )
+
+[node name="Platform4" type="AnimatedSprite" parent="PlatformEnemy4"]
+position = Vector2( -18, -717 )
+frames = ExtResource( 35 )
+
+[node name="PlatformEnemy5" type="Area2D" parent="."]
+script = ExtResource( 41 )
+enemy_name = "PlatformEnemy5"
+distance_travel = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy5"]
+position = Vector2( 160, -774.438 )
+shape = SubResource( 33 )
+
+[node name="PlatformEnemy5" type="AnimatedSprite" parent="PlatformEnemy5"]
+position = Vector2( 160, -776 )
+frames = ExtResource( 35 )
+frame = 1
+playing = true
+
+[node name="BombEnemy5" type="Area2D" parent="."]
+script = ExtResource( 42 )
+enemy_name = "Bomb5"
+distance_travel = 40
+
+[node name="Bomb5" type="AnimatedSprite" parent="BombEnemy5"]
+position = Vector2( 231, -636 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombEnemy5"]
+position = Vector2( 231, -636.25 )
+shape = SubResource( 34 )
+
+[node name="BombEnemy6" type="Area2D" parent="."]
+script = ExtResource( 47 )
+enemy_name = "Bomb6"
+distance_travel = 40
+
+[node name="Bomb6" type="AnimatedSprite" parent="BombEnemy6"]
+position = Vector2( 457, -611 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombEnemy6"]
+position = Vector2( 457, -610 )
+shape = SubResource( 35 )
+
+[node name="BombEnemy8" type="Area2D" parent="."]
+script = ExtResource( 48 )
+enemy_name = "Bomb8"
+distance_travel = 40
+
+[node name="Bomb8" type="AnimatedSprite" parent="BombEnemy8"]
+position = Vector2( 395, -544 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombEnemy8"]
+position = Vector2( 395, -543 )
+shape = SubResource( 36 )
+
+[node name="BombEnemy7" type="Area2D" parent="."]
+script = ExtResource( 49 )
+enemy_name = "Bomb7"
+distance_travel = 40
+
+[node name="Bomb7" type="AnimatedSprite" parent="BombEnemy7"]
+position = Vector2( 411, -407 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombEnemy7"]
+position = Vector2( 411, -405.875 )
+shape = SubResource( 37 )
+
+[node name="BombEnemy9" type="Area2D" parent="."]
+script = ExtResource( 50 )
+enemy_name = "Bomb9"
+distance_travel = 40
+
+[node name="Bomb9" type="AnimatedSprite" parent="BombEnemy9"]
+position = Vector2( 580, -545 )
+frames = ExtResource( 35 )
+animation = "BombEnemy"
+frame = 5
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BombEnemy9"]
+position = Vector2( 580, -544 )
+shape = SubResource( 38 )
+
+[node name="PlatformEnemy6" type="Area2D" parent="."]
+script = ExtResource( 51 )
+enemy_name = "PlatformEnemy6"
+distance_travel = 25
+
+[node name="PlatformEnemy6" type="AnimatedSprite" parent="PlatformEnemy6"]
+position = Vector2( 754, -734 )
+frames = ExtResource( 35 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy6"]
+position = Vector2( 754, -732.5 )
+shape = SubResource( 39 )
+
+[node name="PlatformEnemy7" type="Area2D" parent="."]
+script = ExtResource( 52 )
+enemy_name = "PlatformEnemy7"
+distance_travel = 25
+
+[node name="PlatformEnemy7" type="AnimatedSprite" parent="PlatformEnemy7"]
+position = Vector2( 612, -403 )
+frames = ExtResource( 35 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy7"]
+position = Vector2( 612, -402 )
+shape = SubResource( 40 )
+
+[node name="PlatformEnemy8" type="Area2D" parent="."]
+script = ExtResource( 54 )
+enemy_name = "PlatformEnemy8"
+distance_travel = 25
+
+[node name="PlatformEnemy8" type="AnimatedSprite" parent="PlatformEnemy8"]
+position = Vector2( 579, -183 )
+frames = ExtResource( 35 )
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy8"]
+position = Vector2( 579, -181.5 )
+shape = SubResource( 41 )
+
+[node name="PlatformEnemy9" type="Area2D" parent="."]
+script = ExtResource( 53 )
+enemy_name = "PlatformEnemy9"
+distance_travel = 25
+
+[node name="PlatformEnemy9" type="AnimatedSprite" parent="PlatformEnemy9"]
+position = Vector2( 436, -183 )
+frames = ExtResource( 35 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy9"]
+position = Vector2( 436, -182.25 )
+shape = SubResource( 42 )
+
+[node name="PlatformEnemy10" type="Area2D" parent="."]
+script = ExtResource( 55 )
+enemy_name = "PlatformEnemy10"
+distance_travel = 25
+
+[node name="PlatformEnemy10" type="AnimatedSprite" parent="PlatformEnemy10"]
+position = Vector2( 408, 13 )
+frames = ExtResource( 35 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy10"]
+position = Vector2( 408, 13.5 )
+shape = SubResource( 43 )
+
+[node name="PlatformEnemy11" type="Area2D" parent="."]
+script = ExtResource( 56 )
+enemy_name = "PlatformEnemy11"
+distance_travel = 25
+
+[node name="PlatformEnemy11" type="AnimatedSprite" parent="PlatformEnemy11"]
+position = Vector2( 589, 16 )
+frames = ExtResource( 35 )
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy11"]
+position = Vector2( 589, 16.75 )
+shape = SubResource( 44 )
+
+[node name="PlatformEnemy12" type="Area2D" parent="."]
+
+[node name="PlatformEnemy12" type="AnimatedSprite" parent="PlatformEnemy12"]
+position = Vector2( 676, -141 )
+frames = ExtResource( 35 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlatformEnemy12"]
+position = Vector2( 676, -140.5 )
+shape = SubResource( 45 )

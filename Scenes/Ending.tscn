@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Music/Ending.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Sprites/Characters/Kylo.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Backgrounds/ending.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Ending.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sprites/Characters/KyloYay1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Characters/KyloYay2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Characters/KyloYay4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Characters/KyloYay3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Characters/KyloYay5.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Yay4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Yay3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Yay5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Yay1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Yay2",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="EndingBackground" type="Sprite" parent="."]
+position = Vector2( 156, 112.5 )
+scale = Vector2( 1.03125, 1.01339 )
+texture = ExtResource( 3 )
+
+[node name="You" type="AnimatedSprite" parent="."]
+position = Vector2( 152, 59 )
+scale = Vector2( 1.03125, 1.01339 )
+frames = SubResource( 1 )
+animation = "Yay5"

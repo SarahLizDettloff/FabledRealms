@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1679734615.cfg"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Finding the receipt for pea soup, the main character suddenly recalled a long-forgotten childhood memory of cooking with their father in the kitchen."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.1",
+		"file": "timeline-1679814130.json",
+		"name": "pickupPeaSoupRecipe"
+	}
+}

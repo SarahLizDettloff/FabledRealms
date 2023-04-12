@@ -1,0 +1,91 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1679734615.cfg"
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[wave amp=50 freq=2]Where am I? Who am I?[/wave]"
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Welcome, stranger. You have fallen into the dark realm, a place between worlds. As for who you are, that is a question only you can answer."
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You have lost your memories, and your identity is a mystery even to yourself."
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "How did I end up here?"
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That, too, is unknown. Perhaps you stumbled upon a portal or were cast here by a curse. But now that you are here, you must find a way to escape. "
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " The dark realm is a dangerous place, full of creatures and traps that seek to ensnare you. Here is a Shadowist Dagger."
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "How can I escape if I don't even know who I am?"
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That is a question you must answer as you explore the realm. Seek out the artifacts scattered throughout the land, and perhaps they will unlock the memories hidden within you."
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "But beware - you are not the only one seeking these artifacts, and there are those who will stop at nothing to claim them."
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I will do what I must to escape this place and reclaim my identity."
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The path ahead is treacherous, but I sense a strength within you. May it guide you on your journey."
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Thank you..."
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " Remember, stranger - the fate of the dark realm, and perhaps even your own, rests in your hands."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.1",
+		"file": "timeline-1641869562.json",
+		"name": "timeline-Intro"
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"glossary": [
+
+	],
+	"variables": [
+		{
+			"id": "1642125827-267",
+			"name": "ui_page_up",
+			"type": 0,
+			"value": "1"
+		},
+		{
+			"id": "1642113956-557",
+			"name": "ui_page_down",
+			"type": 0,
+			"value": "1"
+		},
+		{
+			"id": "1641775929-250",
+			"name": "hover",
+			"type": 0,
+			"value": "1"
+		},
+		{
+			"id": "1641753774-648",
+			"name": "Press space or Enter",
+			"type": 0,
+			"value": "1"
+		}
+	]
+}

@@ -1,0 +1,79 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1679734615.cfg"
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " I did it! I escaped the dark realm!"
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Well done, stranger. You have proven your strength and your will to survive."
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " But what about my memories? Will they come back now that I'm out of that place?"
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "That remains to be seen. But you have gained something even more valuable than memories - you have gained the knowledge that you can overcome even the darkest of challenges."
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " I still have so many questions. Who am I? How did I end up in the dark realm?"
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " Those are questions that only you can answer. But now that you have escaped the dark realm, you have the opportunity to start anew, to create a new identity for yourself. "
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You are free to shape your own destiny."
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Thank you for guiding me through the dark realm. I couldn't have done it without your help."
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It was my pleasure. You are a strong and resilient individual, and I have no doubt that you will go on to accomplish great things."
+		},
+		{
+			"character": "character-1679732694.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " I will always remember the lessons I learned in the dark realm. They will stay with me for the rest of my life."
+		},
+		{
+			"character": "character-1679732737.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And that, stranger, is the greatest treasure of all - the knowledge and experience that you have gained on your journey. May it serve you well in all your future endeavors."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.1",
+		"file": "timeline-1679976065.json",
+		"name": "timeline-ending"
+	}
+}

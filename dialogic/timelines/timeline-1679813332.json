@@ -1,0 +1,19 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1679734615.cfg"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Finding the birthday card from his grandmother, he was filled with a rush of warmth and nostalgia for the love she had always shown him."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.1",
+		"file": "timeline-1679813332.json",
+		"name": "pickupBirthdayCard"
+	}
+}
